@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Best time spend</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+    <p id="v"></p>
+</body>
+<script>
+    const sayDate = function(str){
+   //console.log(str, Date.now());
+   document.getElementById('v').innerHTML = (str, Date.now());
+   }
+
+   let intervalId;
+
+    const startChangingTime = function(){
+        if(!intervalId){
+        intervalId = setInterval( sayDate, 1000, "hi");
+        }
+    };
+
+    const stopChangingTime = function(){
+        clearInterval(intervalId);
+        intervalId = null;
+    };
+    
+
+
+    document.querySelector('#start').addEventListener('click', startChangingTime);
+
+    document.querySelector('#stop').addEventListener('click', stopChangingTime);
+
+
+    
+</script>
+</html>
